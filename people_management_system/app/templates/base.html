@@ -1,0 +1,37 @@
+<!-- app/templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}|'People Management System'</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+	<link href="{{url_for('static', filename='img/favicon.jpg')}}" rel="shortcut icon">
+</head>
+<body>
+<!-- Modify nav bar menu -->
+<div class="container topnav">
+	<div class="navbar-header">
+		<a class="navbar-brand topnav" href="{{ url_for('home.homepage') }}">People Management System</a>
+	</div>
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="{{ url_for('home.homepage') }}">Home</a></li>
+			<li><a href="{{ url_for('user.create_user') }}">Add User</a></li>
+			<li><a href="{{ url_for('user.find_user') }}">Find User</a></li>
+			<li><a href="{{ url_for('user.show_users') }}">Show Users</a></li>
+		</ul>
+	</div>
+</div>
+<div>
+		{% block body %}
+		{% endblock %}
+</div>
+
+<!-- Modify footer menu -->
+<footer class="container topnav">
+          Copyright @2018. All Rights Reserved
+           </br>
+          Support By CaraWang(wlin@redhat.com)
+</footer>
+</body>
+</html>
